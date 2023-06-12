@@ -1,0 +1,16 @@
+.component__menu-title{
+  font-size: 135px;
+  color: white;
+}
+.component__menu-title h1{
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.component__menu-title hr{
+  margin-top: 12px;
+  margin-bottom: 12px;
+  opacity: 0.1;
+  box-shadow: 2px 2px 1px gray;
+}
