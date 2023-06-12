@@ -6,7 +6,6 @@
   display: flex;
   justify-content: center;
   text-transform: uppercase;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .component__menu-title hr{
   margin-top: 12px;
