@@ -1,0 +1,11 @@
+.menu-bar__list ul{
+  display:flex;
+  flex-direction: row;
+  list-style: none;
+}
+.menu-bar__list ul li{
+  margin-right: 20px;
+  font-size: 20px;
+  text-transform: uppercase;
+
+}
