@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import {datafake} from '../../data/datafake'
 
 @Component({
   selector: 'app-content',
@@ -6,13 +8,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
-  photoCover:string = "https://ichef.bbci.co.uk/news/640/cpsprodpb/5367/production/_99315312_nasa.jpg"
-  contentTitle:string = "Imagens ineditas do planeta vermelho"
-  contentDescription:string = "Fotos tiradas por robô que posou em marte a 5 anos atrás"
+  photoCover:string = ""
+  contentTitle:string = ""
+  contentDescription:string = ""
+  private id:string | null = "0"
 
-  constructor() { }
+  constructor(
+    private route:ActivatedRoute
+    )
+    { }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe( value =>
+      this.id = value.get("id")
+    )
+    this.setValuesToComponent(this.id)
   }
 
+  setValuesToComponent(id:string | null){
+    const result = datafake.filter(article => article.id == id)[0]
+
+    this.contentTitle = result.title
+    this.contentDescription = result.description
+    this.photoCover = result.photoCover
+  }
 }
